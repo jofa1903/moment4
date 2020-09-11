@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jofa1903/min-hemsida#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.12",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-concat-css": "^3.1.0"
