@@ -5,7 +5,6 @@ const browserSync = require('browser-sync');
 const uglify = require("gulp-uglify-es").default;
 const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
-const autoprefixer = require("autoprefixer");
 const imagemin = require("gulp-imagemin");
 
 
@@ -44,7 +43,7 @@ function imageCompressionTask(){
 function cssTask(){
     return src(files.cssPath)
     .pipe(cssConcat('bundle.css'))
-    .pipe(postcss([autoprefixer(), cssnano]))
+    .pipe(postcss(cssnano))
     .pipe(dest("pub/css"));
 }
 
