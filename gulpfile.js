@@ -17,7 +17,7 @@ function htmlTask(){
     );
 }
 
-// concatination
+// JS-concatination
 function jsTask(){
     return src(files.jsPath)
     .pipe(jsConcat('main.js'))
@@ -39,17 +39,13 @@ function reload(){
         }
     });
     watch(files.htmlPath, htmlTask).on('change', browserSync.reload);
+    watch(files.cssPath, cssTask).on('change', browserSync.reload);
+    watch(files.jsPath, jsTask).on('change', browserSync.reload);
 }
 
-// Watcher
-function watchTask(){
-    watch([files.htmlPath, files.jsPath, files.cssPath]);
-    parallel(htmlTask, jsTask, cssTask);
-}
 
 // Default task
 exports.default = series(
     parallel(htmlTask, jsTask, cssTask),
-    reload,
-    watchTask
+    reload
 );

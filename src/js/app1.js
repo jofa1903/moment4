@@ -1,1 +1,1 @@
-console.log("Hello from app1");
+console.log("Hello from app 1");
