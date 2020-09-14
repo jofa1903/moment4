@@ -8,8 +8,8 @@ Automatisering med hjälp av Gulp underlättar jobbet för webbutvecklaren genom
 * Konkatenering av JavaScript- och CSS- filer.
 
 ## Paket jag använd i detta projekt:
-* gulp-concat - är ett paket som tillåter användaren att konkatinera JavaScript-filer.
-* gulp-concat-css är ett paket som tillåter användaren att konkatinera CSS-filer.
+* gulp-concat - är ett paket som tillåter användaren att konkatenera JavaScript-filer.
+* gulp-concat-css är ett paket som tillåter användaren att konkatenera CSS-filer.
 * browser-sync - laddar om webbläsaren när ändringar i koden görs. 
 * gulp-uglify-es - miniferar JavaScript kod.
 * gulp-imagemin - komprimerar automatiskt bilder. 
