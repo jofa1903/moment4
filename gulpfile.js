@@ -6,16 +6,18 @@ const uglify = require("gulp-uglify-es").default;
 const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
 const autoprefixer = require("autoprefixer");
+const imagemin = require("gulp-imagemin");
 
 
-//sökvägar
+//pathways
 const files = {
     htmlPath: "src/**/*.html",
     cssPath: "src/**/*.css",
-    jsPath: "src/**/*.js"
+    jsPath: "src/**/*.js",
+    imgPath: "src/pre-img/*"
 }
 
-//kopiera html-filer
+//copy HTML-files to pub folder
 function htmlTask(){
     return src(files.htmlPath)
     .pipe(dest('pub')
@@ -30,6 +32,13 @@ function jsTask(){
     .pipe(dest("pub/js"));
 
 }
+
+// image compression
+function imageCompressionTask(){
+    return src(files.imgPath)
+    .pipe(imagemin({ progressive: true }))
+    .pipe(dest('pub/img'));
+};
 
 // CSS-concatination
 function cssTask(){
@@ -54,6 +63,6 @@ function reload(){
 
 // Default task
 exports.default = series(
-    parallel(htmlTask, jsTask, cssTask),
+    parallel(htmlTask, jsTask, cssTask, imageCompressionTask),
     reload
 );

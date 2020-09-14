@@ -1,5 +1,13 @@
 h1{
-    font-size:15em;
+    font-size:10em;
     font-family:arial;
     text-align: center;
+}
+
+.cat-picture{
+    height:auto;
+    width: 50%;
+    display:block;
+    margin:auto;
+
 }
