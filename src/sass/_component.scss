@@ -1,0 +1,197 @@
+// Navbar-menu
+.logo-mobile{
+display:none;
+
+}
+  nav {
+    height: 10vh;
+    background-color: color(accent);
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .nav-links li a {
+    color:color(text);
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+
+  
+  @media screen and (max-width: 768px) {
+    .logo-mobile{
+        position:absolute;
+        padding-top:15px;
+        font-size:1.8em;
+        display:block;
+        font-family: font(main);
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+
+        
+
+    }
+
+    .logo{
+        display:none;
+    }
+    
+    .line {
+      width: 30px;
+      height: 3px;
+      background: color(text);
+      margin: 5px;
+    }
+    nav {
+      position: relative;
+    }
+  
+    .hamburger {
+      position: absolute;
+      cursor: pointer;
+      right: 5%;
+      top: 50%;
+      transform: translate(-5%, -50%);
+      z-index: 12;
+    }
+  
+    .nav-links {
+      position: absolute;
+      background-color: color(accent);
+      height: 100vh;
+      width: 100%;
+      flex-direction: column;
+      clip-path: circle(100px at 90% -10%);
+      -webkit-clip-path: circle(100px at 90% -10%);
+      transition: all 1s ease-out;
+      pointer-events: none;
+      z-index: 2;
+      
+    }
+    .nav-links.open {
+      clip-path: circle(1000px at 100%);
+      -webkit-clip-path: circle(1000px at 90% -10%);
+      pointer-events: all;
+    }
+    .landing {
+      flex-direction: column;
+    }
+    .nav-links li {
+      opacity: 1;
+    }
+    .nav-links li a {
+      font-size: 25px;
+    }
+    .nav-links li:nth-child(1) {
+      transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+      transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+      transition: all 0.5s ease 0.6s;
+    }
+    li.fade {
+      opacity: 1;
+    }
+  }
+
+    .logo{
+        color:color(primary);
+        text-transform:uppercase;
+        letter-spacing:5px;
+        @include textsize(large);
+    }
+
+
+// buttons
+
+.cta-btn{
+    font-family: font(main);
+    background-color: color(accent-darken); 
+    color:color(text);
+    text-align: center;
+    @include textsize(medium);
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding:0.5vw 2.5vw 0.5vw 2.5vw;
+    &:hover{
+        background-color: color(text);
+        color: color(primary);
+        transition: ease-in 0.2s;
+    }
+
+}
+
+
+
+.pricetag{
+    font-family: font(main);
+    color: color(text);
+    @include textsize(medium);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// footer
+
+footer{
+    padding:4vw;
+    color: color(text);
+    @include flexAlign(row, space-evenly);
+    font-family: font(main);
+    
+
+    ul{
+        @include flexAlign(row, space-evenly);
+
+    }
+
+    li{
+        padding:1vw;
+        padding-top:0;
+        @include textsize(medium);
+    }
+}
+
+// images
+
+.image-container{
+    position: relative;
+    text-align: center;
+    color: color(text);
+    img{
+        padding-top:20px;
+        width:100%;
+        display:block;
+        position:relative;
+        z-index: -1;
+    }
+
+
+}
+
+@media only screen and (max-width: 900px) {
+    .cta-btn{
+        @include textsize(large);  
+    }
+    .pricetag{
+        @include textsize(large);
+    }
+
+  }
+
+  

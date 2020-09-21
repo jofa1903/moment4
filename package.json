@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jofa1903/moment2.git"
+    "url": "https://github.com/jofa1903/moment3.git"
   },
   "author": "jofa1903",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jofa1903/min-hemsida/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/jofa1903/min-hemsida#readme",
+  "homepage": "",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.26.12",
@@ -25,6 +25,8 @@
     "gulp-concat-css": "^3.1.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-uglify-es": "^2.0.0"
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "node-sass": "^4.14.1"
   }
 }

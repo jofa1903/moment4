@@ -6,6 +6,8 @@ const uglify = require("gulp-uglify-es").default;
 const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
 const imagemin = require("gulp-imagemin");
+const sass = require('gulp-sass'); 
+sass.compiler = require('node-sass');
 
 
 //pathways
@@ -13,7 +15,16 @@ const files = {
     htmlPath: "src/**/*.html",
     cssPath: "src/**/*.css",
     jsPath: "src/**/*.js",
-    imgPath: "src/pre-img/*"
+    imgPath: "src/img/*",
+    sassPath: "src/**/*.scss"
+}
+
+// sass-task
+function sassTask() {
+    return src(files.sassPath, files.cssPath )
+        .pipe(sass().on("error", sass.logError))
+        .pipe(dest("pub"))
+        .pipe(browserSync.stream());
 }
 
 //copy HTML-files to pub folder
@@ -41,7 +52,7 @@ function imageCompressionTask(){
 
 // CSS-concatination
 function cssTask(){
-    return src(files.cssPath)
+    return src(files.cssPath,)
     .pipe(cssConcat('bundle.css'))
     .pipe(postcss(cssnano))
     .pipe(dest("pub/css"));
@@ -57,11 +68,12 @@ function reload(){
     watch(files.htmlPath, htmlTask).on('change', browserSync.reload);
     watch(files.cssPath, cssTask).on('change', browserSync.reload);
     watch(files.jsPath, jsTask).on('change', browserSync.reload);
+    watch(files.sassPath, sassTask).on('change', browserSync.reload);
 }
 
 
 // Default task
 exports.default = series(
-    parallel(htmlTask, jsTask, cssTask, imageCompressionTask),
+    parallel(htmlTask, jsTask, imageCompressionTask, sassTask, cssTask),
     reload
 );
