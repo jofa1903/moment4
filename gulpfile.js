@@ -8,6 +8,8 @@ const cssnano = require("cssnano");
 const imagemin = require("gulp-imagemin");
 const sass = require('gulp-sass'); 
 sass.compiler = require('node-sass');
+const gulp = require('gulp');
+const babel = require('gulp-babel');
 
 
 //pathways
@@ -37,6 +39,9 @@ function htmlTask(){
 // JS-concatination
 function jsTask(){
     return src(files.jsPath)
+    .pipe(babel({
+        presets: ["@babel/preset-env"]
+    }))
     .pipe(jsConcat('main.js'))
     .pipe(uglify())
     .pipe(dest("pub/js"));
@@ -58,6 +63,7 @@ function cssTask(){
     .pipe(dest("pub/css"));
 }
 
+    
 // BrowserSync
 function reload(){
     browserSync.init({
