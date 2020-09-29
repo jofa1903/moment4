@@ -1,14 +1,14 @@
 {
-  "name": "moment2",
+  "name": "moment4",
   "version": "1.0.0",
-  "description": "moment 2 webbutveckling",
+  "description": "moment 4 webbutveckling",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jofa1903/moment3.git"
+    "url": "https://github.com/jofa1903/moment4.git"
   },
   "author": "jofa1903",
   "license": "ISC",
