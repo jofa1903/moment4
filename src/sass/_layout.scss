@@ -1,169 +1,26 @@
-
-
-
 body{
     background-color: color(primary);
     font-family: font(main);
+    color:white;
 }
 
-.section-a{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    height:100vh;
-        
-        .right-side{
-            .image-container{
-                position: relative;
-                text-align: center;
-                color: color(text);
-                img{
-                    padding-top:20px;
-                    width:100%;
-                    display:block;
-                    position:relative;
-                    z-index: -1;
-                }
+#courses{
+    @include textsize(medium);
+    color:white;
+    font-family: font(main);
+    background-color: color(accent);
+    text-align: center;
+    width:50%;
+    padding:30px;
+}
 
-
-            }
-
-        }
-        .left-side{
-            padding-top:100px;
-            width:100%;
-                p{
-                    font-family: font(main);
-                    color: color(text);
-                    @include textsize('');
-                    text-align:center;
-                }
-                .tagline{
-                    @include textsize(large);
-                    font-style: italic;
-                }
-        }
-    
+.mainsection{
+    padding-top:10%;
 
 }
 
-// section-B
-
-.section-b{
-    @extend .section-a;
-    background-color: color(primary-light);
-    height:auto;
-
-    .right-side{
-                h3{
-                    font-family: font(main);
-                    color: color(text);
-                    @include textsize(large);
-                    text-align:center;
-                    padding-left:10vw;
-                    padding-right:10vw;
-                    padding-top:10%;
-                    margin-bottom:1vw;
-                }
-
-                p{
-                    font-family: font(main);
-                    color: color(text);
-                    @include textsize(medium);
-                    padding-left:10vw;
-                    padding-right:10vw;
-                }
-        }
-        .left-side{
-            padding-top:0;
-                img{                
-                    display:block;
-                    width:100%;
-                    z-index: 1;
-                    object-fit:contain;
-                    padding-top:0;
-                }
-        }
+input{
+    padding:10px;
+    width:100%;
 }
 
-
-
-.main-container{
-    max-width:1280px;
-    margin:auto;
-}
-
-
-.divider{
-    height:20px;
-}
-
-@media only screen and (max-width: 1280px) {
-    .section-b .right-side h3{
-        font-size:2.5em;
-        font-weight:bold;
-        padding-top:20%;
-        margin-bottom:1vw;
-    }
-
-    .section-b .right-side p{
-        @include textsize(medium);
-    }
-
-}
-
-@media only screen and (max-width: 950px) {
-    .section-a{
-        display:flex;
-        flex-direction: column;
-    }
-
-    .divider{
-        height:20px;
-        margin-bottom:60vh;
-    }
-
-   .section-b .right-side h3{
-        font-size:2.5em;
-        font-weight:bold;
-        padding-top:10px;
-
-    }
-
-    .section-b .right-side p{
-        @include textsize(large);
-    }
-
-
-
-  }
-@media only screen and (max-width: 700px) {
-
-
-    .divider{
-        height:20px;
-        margin-bottom:35vh;
-    }
-
-    .right-side p{
-        font-family: font(main);
-        color: color(text);
-        
-        padding-left:10vw;
-        padding-right:10vw;
-    }
-    .section-b .right-side p{
-        @include textsize(large);
-    }
-
-  }
-@media only screen and (max-width: 510px) {
-
-
-    .divider{
-        height:20px;
-        margin-bottom:2vh;
-    }
-
-
-
-  }

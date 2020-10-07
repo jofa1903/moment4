@@ -25,7 +25,7 @@ $data = json_decode(file_get_contents('php://input'));
 
 
 /* Set ID to update */
-
+$id->id = $data->id;
 $courses->code = $data->code;
 $courses->name = $data->name;
 $courses->progression = $data->progression;

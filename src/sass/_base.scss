@@ -1,6 +1,6 @@
 // colors
 $colors: (
-    primary: #0D0D0D,
+    primary: #249e80,
     primary-light: lighten(#0D0D0D, 50%),
     accent: #FF5858,
     accent-darken: darken(#FF5858, 8%),
@@ -14,7 +14,6 @@ $fonts: (
     main:'Montserrat',
 );
 
-$navbar-font-size:1.2vw;
 
 // functions
 @function font($font-name){

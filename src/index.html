@@ -1,17 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sass/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
-    <title>Audio</title>
+    <title>Moment 5</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
-    
-    <script src="js/main.js"></script>
+    <!-- Page -->
+    <div id="page">
+       
+        <!-- Content -->
+        <div id="content">
+            </section>
+            <div id="updateDiv"></div>
+            <section>
+                <h2>Kurser webbutveckling:</h2>
+                <div>
+
+                    <div id="courses"></div>
+                    <!-- Where the courses goes -->
+                </div>
+            </section>
+            <section id="courses">
+                <h2>Lägg till ny kurs</h2>
+                <form method="get">
+                    <label for="code">Kurskod</label>
+                    <input type="text" name="code" id="code"> <br>
+                    <label for="name">Kursnamn</label>
+                    <input type="text" name="name" id="name"> <br>
+                    <label for="prog">Nivå</label>
+                    <input type="text" name="prog" id="prog"> <br>
+                    <label for="plan">Kursplan</label>
+                    <input type="text" name="plan" id="plan"> <br>
+                    <input type="submit" id="addButton">
+                </form>
+            </section>
+        </div>
+
+
+        <!-- Footer -->
+        <section id="footer">
+
+        </section>
+    </div>
+    </div>
+
 </body>
+<script src="js/main.js"></script>
 
 </html>
